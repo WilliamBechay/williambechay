@@ -2,8 +2,8 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import ProjectCard from '@/components/ProjectCard';
 import { useLanguage } from '@/components/LanguageProvider';
-import wiibecImage from '@/src/assets/wiibec.png';
-import mindovestImage from '@/src/assets/mindo.png';
+import wiibecImage from '@/assets/wiibec.png';
+import mindovestImage from '@/assets/mindo.png';
 
 const Projects = () => {
   const { translations } = useLanguage();
