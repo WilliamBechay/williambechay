@@ -17,10 +17,12 @@ const Home = () => {
         <title>{translations.home.meta.title}</title>
         <meta name="description" content={translations.home.meta.description} />
       </Helmet>
-      <WelcomeMessage />
-      <Projects />
-      <Skills />
-      <CallToAction />
+      <div className="flex flex-col w-full overflow-x-hidden">
+        <WelcomeMessage />
+        <Projects />
+        <Skills />
+        <CallToAction />
+      </div>
     </>
   );
 };
