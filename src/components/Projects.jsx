@@ -41,8 +41,7 @@ const Projects = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-            {translations.projects.heading}
+          <h2 className="text-xl md:text-3xl font-bold mb-4 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">             {translations.projects.heading}
           </h2>
           {translations.projects.subheading && (
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
