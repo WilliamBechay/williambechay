@@ -79,14 +79,14 @@ const Skills = () => {
   };
 
   return (
-    <section id="skills" className="py-20 lg:py-24 bg-secondary/30 overflow-hidden">
+    <section id="skills" className="py-12 lg:py-16 bg-secondary/30 overflow-hidden">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.5 }}
           transition={{ duration: 0.5 }}
-          className="text-center mb-16 lg:mb-20"
+          className="text-center mb-10 lg:mb-12"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
             {translations.skills.heading}
@@ -122,7 +122,7 @@ const Skills = () => {
         </div>
 
         <motion.div
-          className="text-center mt-16 lg:mt-20"
+          className="text-center mt-10 lg:mt-14"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.5 }}
