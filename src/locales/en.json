@@ -1,0 +1,195 @@
+{
+  "header": {
+    "home": "Home",
+    "projects": "Projects",
+    "skills": "Skills",
+    "contact": "Contact",
+    "admin": "Admin"
+  },
+  "hero": {
+    "heading": "Exceptional Web Development",
+    "subheading": "Bringing your ideas to life with modern and powerful web solutions. Expertise in frontend, backend, and cloud development.",
+    "button": "View my projects"
+  },
+  "projects": {
+    "heading": "My Recent Projects",
+    "subheading": "",
+    "wiibecDescription": "Wiibec is a non-profit organization dedicated to the financial education of young people. We work directly in schools to teach the essential basics of money management.",
+    "mindovestDescription": "Mindovest is an all-in-one platform for tracking and optimizing your investment strategies, with portfolio management tools, a trader community, and its own cryptocurrency (MindoCoin)."
+  },
+  "skills": {
+    "heading": "My Technical Skills",
+    "subheading": "A range of technologies and tools I master to build complete and scalable web applications.",
+    "contactButton": "Let's discuss your project",
+    "categories": {
+      "frontend": "Frontend Development",
+      "backend": "Backend Development",
+      "tools": "Tools & DevOps"
+    },
+    "items": [
+      {
+        "name": "JavaScript",
+        "description": "Deep proficiency for dynamic and interactive web development.",
+        "icon": "Code",
+        "experience": "5+ years",
+        "category": "frontend"
+      },
+      {
+        "name": "React.js",
+        "description": "Building modern and performant user interfaces with React and its ecosystem.",
+        "icon": "Code",
+        "experience": "4+ years",
+        "category": "frontend"
+      },
+      {
+        "name": "Tailwind CSS",
+        "description": "Rapid and efficient styling of applications with the utility-first CSS framework.",
+        "icon": "Brush",
+        "experience": "3+ years",
+        "category": "frontend"
+      },
+      {
+        "name": "HTML & CSS",
+        "description": "Solid foundations for semantic web structures and responsive design.",
+        "icon": "Code",
+        "experience": "5+ years",
+        "category": "frontend"
+      },
+      {
+        "name": "Node.js",
+        "description": "Development of robust servers and RESTful APIs with Node.js and Express.",
+        "icon": "Server",
+        "experience": "4+ years",
+        "category": "backend"
+      },
+      {
+        "name": "Python",
+        "description": "Using Python for backend, scripting, and automation.",
+        "icon": "Server",
+        "experience": "3+ years",
+        "category": "backend"
+      },
+      {
+        "name": "PostgreSQL",
+        "description": "Design and management of complex relational databases.",
+        "icon": "Database",
+        "experience": "3+ years",
+        "category": "backend"
+      },
+      {
+        "name": "MongoDB",
+        "description": "Development with NoSQL databases for flexible and scalable applications.",
+        "icon": "Database",
+        "experience": "2+ years",
+        "category": "backend"
+      },
+      {
+        "name": "Git & GitHub",
+        "description": "Version control and effective collaboration with Git and associated platforms.",
+        "icon": "GitMerge",
+        "experience": "5+ years",
+        "category": "tools"
+      },
+      {
+        "name": "Docker",
+        "description": "Containerization of applications for consistent and reproducible deployments.",
+        "icon": "Container",
+        "experience": "2+ years",
+        "category": "tools"
+      },
+      {
+        "name": "AWS",
+        "description": "Deployment and management of applications on Amazon Web Services.",
+        "icon": "Cloud",
+        "experience": "3+ years",
+        "category": "tools"
+      },
+      {
+        "name": "CI/CD",
+        "description": "Implementation of continuous integration and deployment pipelines.",
+        "icon": "Terminal",
+        "experience": "3+ years",
+        "category": "tools"
+      }
+    ]
+  },
+  "contact": {
+    "heading": "Contact Me",
+    "subtitle": "Fill out the form below and I'll get back to you as soon as possible.",
+    "meta": {
+      "title": "Contact - William Béchay",
+      "description": "Get in touch with William Béchay. Send a message for project inquiries, collaborations, or general questions."
+    },
+    "form": {
+      "title": "Contact Us",
+      "name": "Name",
+      "namePlaceholder": "Your Name",
+      "email": "Email",
+      "emailPlaceholder": "Your Email",
+      "subject": "Subject",
+      "subjectPlaceholder": "What is this about?",
+      "reason": {
+        "label": "Reason for contact",
+        "placeholder": "Select a reason",
+        "project": "New Project Inquiry",
+        "bug": "Bug Report",
+        "collaboration": "Collaboration Proposal",
+        "general": "General Question"
+      },
+      "message": "Message",
+      "messagePlaceholder": "Your message here...",
+      "submit": "Send Message",
+      "sending": "Sending..."
+    },
+    "toast": {
+      "success": {
+        "title": "Message Sent!",
+        "description": "Thank you for your message. I will get back to you shortly."
+      },
+      "error": {
+        "title": "Error!",
+        "description": "Your message could not be sent. Please try again."
+      }
+    },
+    "options": {
+      "title": "Other Ways to Connect",
+      "email": "williambechay@hotmail.com"
+    }
+  },
+  "footer": {
+    "rights": "© 2025 William Béchay. All rights reserved.",
+    "crafted_with": "Crafted with"
+  },
+  "home": {
+    "meta": {
+      "title": "William Béchay - Web Developer",
+      "description": "Full-stack web developer specializing in creating powerful and innovative digital experiences."
+    }
+  },
+  "admin": {
+    "meta": {
+      "title": "Admin - William Béchay",
+      "description": "Administration panel to manage submissions."
+    },
+    "login": {
+      "title": "Admin Access",
+      "subtitle": "Please enter the password to continue.",
+      "password": "Password",
+      "passwordPlaceholder": "••••••••",
+      "submit": "Sign In",
+      "verifying": "Verifying...",
+      "error": "Incorrect password. Please try again."
+    },
+    "dashboard": {
+      "title": "Dashboard",
+      "subtitle": "Messages received from the contact form.",
+      "logout": "Log Out",
+      "name": "Name",
+      "email": "Email",
+      "subject": "Subject",
+      "message": "Message",
+      "date": "Date",
+      "noMessages": "No messages yet."
+    }
+  }
+}

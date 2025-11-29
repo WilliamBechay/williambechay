@@ -1,0 +1,195 @@
+{
+  "header": {
+    "home": "Accueil",
+    "projects": "Projets",
+    "skills": "Compétences",
+    "contact": "Contact",
+    "admin": "Admin"
+  },
+  "hero": {
+    "heading": "Développement Web d'Exception",
+    "subheading": "Donnez vie à vos idées avec des solutions web modernes et performantes. Expertise en développement frontend, backend et cloud.",
+    "button": "Voir mes projets"
+  },
+  "projects": {
+    "heading": "Mes Projets Récents",
+    "subheading": "",
+    "wiibecDescription": "Wiibec est un organisme sans but lucratif dédié à l'éducation financière des jeunes. Nous intervenons directement dans les écoles pour enseigner les bases essentielles de la gestion de l'argent.",
+    "mindovestDescription": "Mindovest est une plateforme tout-en-un pour suivre et optimiser vos stratégies d'investissement, avec des outils de gestion de portefeuille, une communauté de traders et sa propre cryptomonnaie (MindoCoin)."
+  },
+  "skills": {
+    "heading": "Mes Compétences Techniques",
+    "subheading": "Un éventail de technologies et d'outils que je maîtrise pour construire des applications web complètes et évolutives.",
+    "contactButton": "Discutons de votre projet",
+    "categories": {
+      "frontend": "Développement Frontend",
+      "backend": "Développement Backend",
+      "tools": "Outils & DevOps"
+    },
+    "items": [
+      {
+        "name": "JavaScript",
+        "description": "Maîtrise approfondie pour le développement web dynamique et interactif.",
+        "icon": "Code",
+        "experience": "5+ ans",
+        "category": "frontend"
+      },
+      {
+        "name": "React.js",
+        "description": "Construction d'interfaces utilisateur modernes et performantes avec React et son écosystème.",
+        "icon": "Code",
+        "experience": "4+ ans",
+        "category": "frontend"
+      },
+      {
+        "name": "Tailwind CSS",
+        "description": "Stylisation rapide et efficace d'applications avec le framework CSS utilitaire.",
+        "icon": "Brush",
+        "experience": "3+ ans",
+        "category": "frontend"
+      },
+      {
+        "name": "HTML & CSS",
+        "description": "Fondations solides pour des structures web sémantiques et un design réactif.",
+        "icon": "Code",
+        "experience": "5+ ans",
+        "category": "frontend"
+      },
+      {
+        "name": "Node.js",
+        "description": "Développement de serveurs robustes et d'APIs RESTful avec Node.js et Express.",
+        "icon": "Server",
+        "experience": "4+ ans",
+        "category": "backend"
+      },
+      {
+        "name": "Python",
+        "description": "Utilisation de Python pour le backend, le scripting et l'automatisation.",
+        "icon": "Server",
+        "experience": "3+ ans",
+        "category": "backend"
+      },
+      {
+        "name": "PostgreSQL",
+        "description": "Conception et gestion de bases de données relationnelles complexes.",
+        "icon": "Database",
+        "experience": "3+ ans",
+        "category": "backend"
+      },
+      {
+        "name": "MongoDB",
+        "description": "Développement avec des bases de données NoSQL pour des applications flexibles et évolutives.",
+        "icon": "Database",
+        "experience": "2+ ans",
+        "category": "backend"
+      },
+      {
+        "name": "Git & GitHub",
+        "description": "Contrôle de version et collaboration efficace avec Git et les plateformes associées.",
+        "icon": "GitMerge",
+        "experience": "5+ ans",
+        "category": "tools"
+      },
+      {
+        "name": "Docker",
+        "description": "Conteneurisation d'applications pour des déploiements cohérents et reproductibles.",
+        "icon": "Container",
+        "experience": "2+ ans",
+        "category": "tools"
+      },
+      {
+        "name": "AWS",
+        "description": "Déploiement et gestion d'applications sur les services cloud d'Amazon Web Services.",
+        "icon": "Cloud",
+        "experience": "3+ ans",
+        "category": "tools"
+      },
+      {
+        "name": "CI/CD",
+        "description": "Mise en place de pipelines d'intégration et de déploiement continus.",
+        "icon": "Terminal",
+        "experience": "3+ ans",
+        "category": "tools"
+      }
+    ]
+  },
+  "contact": {
+    "heading": "Contactez-Moi",
+    "subtitle": "Remplissez le formulaire ci-dessous et je vous répondrai dès que possible.",
+    "meta": {
+      "title": "Contact - William Béchay",
+      "description": "Contactez William Béchay pour toute demande de projet, collaboration ou question générale."
+    },
+    "form": {
+      "title": "Contactez-Nous",
+      "name": "Nom",
+      "namePlaceholder": "Votre Nom",
+      "email": "Email",
+      "emailPlaceholder": "Votre Email",
+      "subject": "Sujet",
+      "subjectPlaceholder": "De quoi s'agit-il ?",
+      "reason": {
+        "label": "Raison du contact",
+        "placeholder": "Sélectionnez une raison",
+        "project": "Demande de nouveau projet",
+        "bug": "Rapport de bogue",
+        "collaboration": "Proposition de collaboration",
+        "general": "Question générale"
+      },
+      "message": "Message",
+      "messagePlaceholder": "Votre message ici...",
+      "submit": "Envoyer le Message",
+      "sending": "Envoi en cours..."
+    },
+    "toast": {
+      "success": {
+        "title": "Message Envoyé !",
+        "description": "Merci pour votre message. Je vous répondrai sous peu."
+      },
+      "error": {
+        "title": "Erreur !",
+        "description": "Votre message n'a pas pu être envoyé. Veuillez réessayer."
+      }
+    },
+    "options": {
+      "title": "Autres Moyens de Connexion",
+      "email": "williambechay@hotmail.com"
+    }
+  },
+  "footer": {
+    "rights": "© 2025 William Béchay. Tous droits réservés.",
+    "crafted_with": "Réalisé avec"
+  },
+  "home": {
+    "meta": {
+      "title": "William Béchay - Développeur Web",
+      "description": "Développeur web full-stack spécialisé dans la création d'expériences numériques performantes et innovantes."
+    }
+  },
+  "admin": {
+    "meta": {
+      "title": "Admin - William Béchay",
+      "description": "Panneau d'administration pour gérer les soumissions."
+    },
+    "login": {
+      "title": "Accès Admin",
+      "subtitle": "Veuillez entrer le mot de passe pour continuer.",
+      "password": "Mot de passe",
+      "passwordPlaceholder": "••••••••",
+      "submit": "Se connecter",
+      "verifying": "Vérification...",
+      "error": "Mot de passe incorrect. Veuillez réessayer."
+    },
+    "dashboard": {
+      "title": "Tableau de Bord",
+      "subtitle": "Messages reçus du formulaire de contact.",
+      "logout": "Déconnexion",
+      "name": "Nom",
+      "email": "Email",
+      "subject": "Sujet",
+      "message": "Message",
+      "date": "Date",
+      "noMessages": "Aucun message pour le moment."
+    }
+  }
+}

@@ -1,0 +1,62 @@
+import React from 'react';
+import { motion } from 'framer-motion';
+import ProjectCard from '@/components/ProjectCard';
+import { useLanguage } from '@/components/LanguageProvider';
+
+const Projects = () => {
+  const { translations } = useLanguage();
+
+  if (!translations || !translations.projects) return null;
+
+  const projects = [
+    {
+      id: 1,
+      title: 'Wiibec.com',
+      description: translations.projects.wiibecDescription,
+      imageSrc: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop',
+      imageAlt: 'Wiibec.com project screenshot showing modern web interface',
+      link: 'https://wiibec.com',
+      tags: [], // Removed tags for Wiibec
+    },
+    {
+      id: 2,
+      title: 'Mindovest.com',
+      description: translations.projects.mindovestDescription,
+      imageSrc: 'https://images.unsplash.com/photo-1516259762381-22954d7d3ad2?q=80&w=2089&auto=format&fit=crop',
+      imageAlt: 'Mindovest.com investment platform interface',
+      link: 'https://mindovest.com',
+      tags: [], // Removed tags for Mindovest
+    },
+  ];
+
+  return (
+    <section id="projects" className="py-20 px-4 bg-secondary/50">
+      <div className="container mx-auto max-w-6xl">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-16"
+        >
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+            {translations.projects.heading}
+          </h2>
+          {translations.projects.subheading && (
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              {translations.projects.subheading}
+            </p>
+          )}
+        </motion.div>
+
+        <div className="grid md:grid-cols-2 gap-8">
+          {projects.map((project, index) => (
+            <ProjectCard key={project.id} project={project} index={index} />
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Projects;
