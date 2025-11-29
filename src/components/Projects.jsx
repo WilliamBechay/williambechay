@@ -13,7 +13,7 @@ const Projects = () => {
       id: 1,
       title: 'Wiibec.com',
       description: translations.projects.wiibecDescription,
-      imageSrc: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop',
+      imageSrc: '/src/assets/images/wiibec.png',
       imageAlt: 'Wiibec.com project screenshot showing modern web interface',
       link: 'https://wiibec.com',
       tags: [], // Removed tags for Wiibec
@@ -22,7 +22,7 @@ const Projects = () => {
       id: 2,
       title: 'Mindovest.com',
       description: translations.projects.mindovestDescription,
-      imageSrc: 'https://images.unsplash.com/photo-1516259762381-22954d7d3ad2?q=80&w=2089&auto=format&fit=crop',
+      imageSrc: '/src/assets/images/mindo.png',
       imageAlt: 'Mindovest.com investment platform interface',
       link: 'https://mindovest.com',
       tags: [], // Removed tags for Mindovest
