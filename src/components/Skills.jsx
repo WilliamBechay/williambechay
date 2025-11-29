@@ -31,7 +31,7 @@ const Skills = () => {
   if (!translations?.skills) return null;
 
   // Valeurs responsives
-  const wheelRadius = "clamp(100px, 18vw, 180px)";
+  const wheelRadius = "clamp(140px, 22vw, 220px)";
   const centerSize = "clamp(160px, 40vw, 240px)";
   const itemSize = 80;
 
