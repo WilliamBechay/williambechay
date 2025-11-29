@@ -1,4 +1,3 @@
-
 import React, { useState, useMemo } from 'react';
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
@@ -31,8 +30,10 @@ const Skills = () => {
 
   if (!translations?.skills) return null;
 
-  const wheelRadius = "clamp(120px, 22vw, 220px)";
-  const itemSize = 90;
+  // Responsive values
+  const wheelRadius = "clamp(100px, 20vw, 220px)";
+  const centerSize = 180; // Mobile: 180px, will be overridden by Tailwind classes
+  const itemSize = 80;
 
   const SkillItem = ({ skill, index }) => {
     const angle = (index / skills.length) * 360;
@@ -58,7 +59,7 @@ const Skills = () => {
               "w-14 h-14 rounded-full flex items-center justify-center bg-secondary shadow-lg transition-all duration-300 mb-2",
               activeSkill?.name === skill.name ? "bg-primary text-primary-foreground scale-110" : "text-primary"
             )}
-            whileHover={{ y: -5, boxShadow: "0 10px 20px rgba(0, 0, 0, 0.2)" }} // Added hover animation for the icon container
+            whileHover={{ y: -5, boxShadow: "0 10px 20px rgba(0, 0, 0, 0.2)" }}
             transition={{ type: "spring", stiffness: 300, damping: 15 }}
           >
             <IconComponent className="w-7 h-7" />
@@ -95,18 +96,28 @@ const Skills = () => {
           </p>
         </motion.div>
 
-        <div className="relative flex items-center justify-center min-h-[450px] md:min-h-[550px]" onMouseLeave={() => setActiveSkill(null)}>
-          <div className="absolute w-full h-full" style={{ width: `calc(${wheelRadius} * 2 + ${itemSize}px)`, height: `calc(${wheelRadius} * 2 + ${itemSize}px)`}}>
+        <div className="relative flex items-center justify-center w-full" style={{ minHeight: "500px" }} onMouseLeave={() => setActiveSkill(null)}>
+          {/* Conteneur pour les éléments autour de la roue */}
+          <div 
+            className="absolute"
+            style={{ 
+              width: `calc(${wheelRadius} * 2 + ${itemSize}px)`,
+              height: `calc(${wheelRadius} * 2 + ${itemSize}px)`,
+              maxWidth: "100%",
+              maxHeight: "100%"
+            }}
+          >
             {skills.map((skill, index) => (
               <SkillItem key={skill.name} skill={skill} index={index} />
             ))}
           </div>
           
+          {/* Centre circulaire */}
           <div
-            className="relative z-10 text-center w-52 h-52 md:w-60 md:h-60 flex flex-col items-center justify-center bg-background/60 backdrop-blur-md rounded-full p-6 shadow-2xl"
+            className="relative z-10 flex flex-col items-center justify-center bg-background/60 backdrop-blur-md rounded-full p-6 shadow-2xl w-44 h-44 sm:w-52 sm:h-52 md:w-60 md:h-60"
           >
-            <h3 className={cn("font-bold text-primary mb-2", displayedContent.isDefault ? "text-lg md:text-xl" : "text-xl md:text-2xl")}>{displayedContent.name}</h3>
-            <p className="text-xs md:text-sm text-muted-foreground">{displayedContent.description}</p>
+            <h3 className={cn("font-bold text-primary mb-2 text-center", displayedContent.isDefault ? "text-sm sm:text-base md:text-lg" : "text-base sm:text-lg md:text-2xl")}>{displayedContent.name}</h3>
+            <p className="text-xs sm:text-xs md:text-sm text-muted-foreground text-center line-clamp-3">{displayedContent.description}</p>
           </div>
         </div>
 
