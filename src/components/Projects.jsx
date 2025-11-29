@@ -18,6 +18,8 @@ const Projects = () => {
       imageSrc: wiibecImage,
       imageAlt: 'Wiibec.com project screenshot showing modern web interface',
       link: 'https://wiibec.com',
+      languages: ['JavaScript', 'JSX (React)', 'HTML', 'CSS', 'JSON'],
+      technologies: ['React', 'Vite', 'Node.js', 'Supabase', 'Stripe', 'Tailwind CSS'],
       tags: [],
     },
     {
@@ -27,6 +29,8 @@ const Projects = () => {
       imageSrc: mindovestImage,
       imageAlt: 'Mindovest.com investment platform interface',
       link: 'https://mindovest.com',
+      languages: ['JavaScript', 'TypeScript', 'SQL', 'HTML', 'CSS', 'JSON', 'Markdown'],
+      technologies: ['React', 'Vite', 'Tailwind CSS', 'Capacitor', 'Supabase', 'Deno'],
       tags: [],
     },
   ];
@@ -52,7 +56,43 @@ const Projects = () => {
         </motion.div>
         <div className="grid md:grid-cols-2 gap-8">
           {projects.map((project, index) => (
-            <ProjectCard key={project.id} project={project} index={index} />
+            <div key={project.id}>
+              <ProjectCard project={project} index={index} />
+              
+              {/* Langages utilisés */}
+              <div className="mt-4 p-3 rounded-lg bg-blue-50 dark:bg-blue-900/20">
+                <h4 className="text-xs font-semibold text-slate-700 dark:text-slate-300 uppercase tracking-wider mb-2">
+                  📝 Langages utilisés
+                </h4>
+                <div className="flex flex-wrap gap-2">
+                  {project.languages.map((lang, idx) => (
+                    <span
+                      key={idx}
+                      className="px-2 py-1 text-xs font-medium bg-blue-100 dark:bg-blue-800 text-blue-700 dark:text-blue-200 rounded-full"
+                    >
+                      {lang}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              {/* Technologies utilisées */}
+              <div className="mt-3 p-3 rounded-lg bg-emerald-50 dark:bg-emerald-900/20">
+                <h4 className="text-xs font-semibold text-slate-700 dark:text-slate-300 uppercase tracking-wider mb-2">
+                  ✅ Technologies utilisées
+                </h4>
+                <div className="flex flex-wrap gap-2">
+                  {project.technologies.map((tech, idx) => (
+                    <span
+                      key={idx}
+                      className="px-2 py-1 text-xs font-medium bg-emerald-100 dark:bg-emerald-800 text-emerald-700 dark:text-emerald-200 rounded-full"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
           ))}
         </div>
       </div>
