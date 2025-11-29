@@ -41,5 +41,5 @@ Follow these instructions to get a local copy of the project up and running.
 
 ### 1. Installation
 
-Install the project dependencies using npm:
+Clone the repository and install the project dependencies using npm:
 
