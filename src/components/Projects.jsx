@@ -2,6 +2,8 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import ProjectCard from '@/components/ProjectCard';
 import { useLanguage } from '@/components/LanguageProvider';
+import wiibecImage from '@/assets/images/wiibec.png';
+import mindovestImage from '@/assets/images/mindo.png';
 
 const Projects = () => {
   const { translations } = useLanguage();
@@ -13,19 +15,19 @@ const Projects = () => {
       id: 1,
       title: 'Wiibec.com',
       description: translations.projects.wiibecDescription,
-      imageSrc: '/src/assets/images/wiibec.png',
+      imageSrc: wiibecImage,
       imageAlt: 'Wiibec.com project screenshot showing modern web interface',
       link: 'https://wiibec.com',
-      tags: [], // Removed tags for Wiibec
+      tags: [],
     },
     {
       id: 2,
       title: 'Mindovest.com',
       description: translations.projects.mindovestDescription,
-      imageSrc: '/src/assets/images/mindo.png',
+      imageSrc: mindovestImage,
       imageAlt: 'Mindovest.com investment platform interface',
       link: 'https://mindovest.com',
-      tags: [], // Removed tags for Mindovest
+      tags: [],
     },
   ];
 
@@ -48,7 +50,6 @@ const Projects = () => {
             </p>
           )}
         </motion.div>
-
         <div className="grid md:grid-cols-2 gap-8">
           {projects.map((project, index) => (
             <ProjectCard key={project.id} project={project} index={index} />
