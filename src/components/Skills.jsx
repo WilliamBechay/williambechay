@@ -31,9 +31,9 @@ const Skills = () => {
   if (!translations?.skills) return null;
 
   // Responsive values
-  const wheelRadius = "clamp(140px, 30vw, 240px)";
+  const wheelRadius = "clamp(100px, 25vw, 220px)";
   const centerSize = 180; // Mobile: 180px, will be overridden by Tailwind classes
-  const itemSize = 75;
+  const itemSize = 70;
 
   const SkillItem = ({ skill, index }) => {
     const angle = (index / skills.length) * 360;
@@ -96,7 +96,7 @@ const Skills = () => {
           </p>
         </motion.div>
 
-        <div className="relative flex items-center justify-center w-full" style={{ minHeight: "600px" }} onMouseLeave={() => setActiveSkill(null)}>
+        <div className="relative flex items-center justify-center w-full" style={{ minHeight: "500px" }} onMouseLeave={() => setActiveSkill(null)}>
           {/* Conteneur pour les éléments autour de la roue */}
           <div 
             className="absolute"
@@ -114,7 +114,7 @@ const Skills = () => {
           
           {/* Centre circulaire */}
           <div
-            className="relative z-10 flex flex-col items-center justify-center bg-background/60 backdrop-blur-md rounded-full p-6 shadow-2xl w-44 h-44 sm:w-52 sm:h-52 md:w-60 md:h-60"
+            className="relative z-10 flex flex-col items-center justify-center bg-background/60 backdrop-blur-md rounded-full p-6 shadow-2xl w-40 h-40 sm:w-52 sm:h-52 md:w-60 md:h-60"
           >
             <h3 className={cn("font-bold text-primary mb-2 text-center", displayedContent.isDefault ? "text-sm sm:text-base md:text-lg" : "text-base sm:text-lg md:text-2xl")}>{displayedContent.name}</h3>
             <p className="text-xs sm:text-xs md:text-sm text-muted-foreground text-center line-clamp-3">{displayedContent.description}</p>
