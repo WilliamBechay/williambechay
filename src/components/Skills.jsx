@@ -30,14 +30,10 @@ const Skills = () => {
 
   if (!translations?.skills) return null;
 
-  // 🔥 BREAKPOINT MOBILE
-  const isMobile =
-    typeof window !== "undefined" &&
-    window.matchMedia("(max-width: 640px)").matches;
-
-  // 🔥 RÉDUCTION DE LA ROUE SUR MOBILE
-  const wheelRadius = isMobile ? "110px" : "clamp(120px, 22vw, 220px)";
-  const itemSize = isMobile ? 55 : 90; // taille des éléments
+  // Valeurs responsives
+  const wheelRadius = "clamp(100px, 18vw, 180px)";
+  const centerSize = "clamp(160px, 40vw, 240px)";
+  const itemSize = 80;
 
   const SkillItem = ({ skill, index }) => {
     const angle = (index / skills.length) * 360;
@@ -54,34 +50,29 @@ const Skills = () => {
           transform: `rotate(${angle}deg) translateX(${wheelRadius}) rotate(${-angle}deg)`,
         }}
         onMouseEnter={() => setActiveSkill(skill)}
+        onTouchStart={() => setActiveSkill(skill)}
         whileHover={{ scale: 1.15, zIndex: 10 }}
         transition={{ type: "spring", stiffness: 400, damping: 10 }}
       >
-        <div className="flex flex-col items-center">
+        <div className="flex flex-col items-center gap-1">
           <motion.div
             className={cn(
-              "rounded-full flex items-center justify-center bg-secondary shadow-lg transition-all duration-300 mb-2",
-              isMobile ? "w-10 h-10" : "w-14 h-14",
-              activeSkill?.name === skill.name
-                ? "bg-primary text-primary-foreground scale-110"
-                : "text-primary"
+              "w-12 h-12 sm:w-14 sm:h-14 rounded-full flex items-center justify-center bg-secondary shadow-lg transition-all duration-300",
+              activeSkill?.name === skill.name ? "bg-primary text-primary-foreground scale-110" : "text-primary"
             )}
             whileHover={{ y: -5, boxShadow: "0 10px 20px rgba(0, 0, 0, 0.2)" }}
             transition={{ type: "spring", stiffness: 300, damping: 15 }}
           >
-            <IconComponent className={isMobile ? "w-5 h-5" : "w-7 h-7"} />
+            <IconComponent className="w-5 h-5 sm:w-6 sm:h-6" />
           </motion.div>
-
-          <p className={cn("font-semibold text-muted-foreground transition-colors duration-300",
-            isMobile ? "text-[10px]" : "text-xs"
-          )}>
+          <p className="text-[10px] sm:text-xs font-semibold text-muted-foreground transition-colors duration-300 line-clamp-2 px-1">
             {skill.name}
           </p>
         </div>
       </motion.div>
     );
   };
-
+  
   const displayedContent = activeSkill || {
     name: "My Tech Stack",
     description: "Hover over a skill to learn more.",
@@ -89,68 +80,64 @@ const Skills = () => {
   };
 
   return (
-    <section id="skills" className="py-20 lg:py-24 bg-secondary/30 overflow-hidden">
+    <section id="skills" className="py-16 sm:py-20 lg:py-24 bg-secondary/30 overflow-hidden">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.5 }}
           transition={{ duration: 0.5 }}
-          className="text-center mb-16 lg:mb-20"
+          className="text-center mb-12 sm:mb-16 lg:mb-20"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
             {translations.skills.heading}
           </h2>
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-base sm:text-lg text-muted-foreground max-w-3xl mx-auto px-2">
             {translations.skills.subheading}
           </p>
         </motion.div>
 
-        <div
-          className="relative flex items-center justify-center min-h-[450px] md:min-h-[550px]"
+        <div 
+          className="relative flex items-center justify-center w-full min-h-[400px] sm:min-h-[500px] md:min-h-[600px]"
           onMouseLeave={() => setActiveSkill(null)}
+          style={{
+            perspective: "1000px"
+          }}
         >
-          <div
-            className="absolute w-full h-full"
-            style={{
-              width: `calc(${wheelRadius} * 2 + ${itemSize}px)`,
-              height: `calc(${wheelRadius} * 2 + ${itemSize}px)`
-            }}
-          >
+          {/* Conteneur pour la roue - utilise des calculs corrects */}
+          <div className="relative" style={{ 
+            width: `calc(2 * ${wheelRadius} + ${itemSize}px)`,
+            height: `calc(2 * ${wheelRadius} + ${itemSize}px)`,
+            maxWidth: "90vw",
+            maxHeight: "90vw"
+          }}>
             {skills.map((skill, index) => (
               <SkillItem key={skill.name} skill={skill} index={index} />
             ))}
           </div>
-
+          
+          {/* Centre cercle */}
           <div
-            className={cn(
-              "relative z-10 text-center flex flex-col items-center justify-center bg-background/60 backdrop-blur-md rounded-full p-6 shadow-2xl",
-              isMobile ? "w-44 h-44" : "w-52 h-52 md:w-60 md:h-60"
-            )}
+            className="absolute z-10 text-center flex flex-col items-center justify-center bg-background/60 backdrop-blur-md rounded-full p-4 sm:p-6 shadow-2xl"
+            style={{
+              width: centerSize,
+              height: centerSize,
+            }}
           >
-            <h3
-              className={cn(
-                "font-bold text-primary mb-2",
-                displayedContent.isDefault
-                  ? isMobile ? "text-md" : "text-lg md:text-xl"
-                  : isMobile ? "text-lg" : "text-xl md:text-2xl"
-              )}
-            >
+            <h3 className={cn(
+              "font-bold text-primary mb-2 sm:mb-3",
+              displayedContent.isDefault ? "text-base sm:text-lg md:text-xl" : "text-lg sm:text-xl md:text-2xl"
+            )}>
               {displayedContent.name}
             </h3>
-            <p
-              className={cn(
-                "text-muted-foreground",
-                isMobile ? "text-[10px]" : "text-xs md:text-sm"
-              )}
-            >
+            <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
               {displayedContent.description}
             </p>
           </div>
         </div>
 
         <motion.div
-          className="text-center mt-16 lg:mt-20"
+          className="text-center mt-12 sm:mt-16 lg:mt-20"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.5 }}
