@@ -96,7 +96,7 @@ const Skills = () => {
           </p>
         </motion.div>
 
-        <div className="relative flex items-center justify-center w-full" style={{ minHeight: "700px" }} onMouseLeave={() => setActiveSkill(null)}>
+        <div className="relative flex items-center justify-center w-full" style={{ minHeight: "clamp(450px, 60vh, 700px)" }} onMouseLeave={() => setActiveSkill(null)}>
           {/* Conteneur pour les éléments autour de la roue */}
           <div 
             className="absolute"
