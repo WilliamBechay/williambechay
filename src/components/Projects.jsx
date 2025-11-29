@@ -32,16 +32,16 @@ const Projects = () => {
   ];
 
   return (
-    <section id="projects" className="py-12 px-4 bg-secondary/50">
+    <section id="projects" className="py-8 px-4 bg-secondary/50">
       <div className="container mx-auto max-w-6xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-10"
+          className="text-center mb-8"
         >
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent whitespace-nowrap overflow-hidden text-ellipsis">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-2 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent whitespace-nowrap overflow-hidden text-ellipsis">
             {translations.projects.heading}
           </h2>
           {translations.projects.subheading && (
