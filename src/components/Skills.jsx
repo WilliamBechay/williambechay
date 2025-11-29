@@ -1,91 +1,94 @@
-
-import React, { useState, useMemo } from 'react';
+import React, { useMemo } from 'react';
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
-import { Code, Server, Database, Cloud, Brush, GitMerge, Terminal, Container as ContainerIcon } from 'lucide-react';
+import { Code, Server, Database, Cloud, Brush, GitMerge, Terminal, Star, Key, Container as ContainerIcon } from 'lucide-react';
 import { useLanguage } from '@/components/LanguageProvider';
 import { Button } from '@/components/ui/button';
-import { cn } from '@/lib/utils';
+import { Badge } from '@/components/ui/badge';
 
 const iconMap = {
-  Code,
-  Server,
-  Database,
-  Cloud,
-  Brush,
-  GitMerge,
-  Terminal,
-  Container: ContainerIcon,
+  Code: Code,
+  Server: Server,
+  Database: Database,
+  Cloud: Cloud,
+  Brush: Brush,
+  GitMerge: GitMerge,
+  Terminal: Terminal,
+  Star: Star,
+  Key: Key,
+  Container: ContainerIcon
+};
+
+const SkillCard = ({ skill, index }) => {
+  const IconComponent = iconMap[skill.icon] || Code;
+
+  const cardVariants = {
+    offscreen: { y: 30, opacity: 0 },
+    onscreen: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        type: 'spring',
+        bounce: 0.4,
+        duration: 0.8,
+        delay: index * 0.05
+      }
+    }
+  };
+
+  return (
+    <motion.div
+      variants={cardVariants}
+      initial="offscreen"
+      whileInView="onscreen"
+      viewport={{ once: true, amount: 0.4 }}
+      className="group flex flex-col bg-background rounded-xl shadow-md hover:shadow-primary/20 transition-all duration-300 hover:-translate-y-1 h-full overflow-hidden"
+    >
+      <div className="p-3 sm:p-4 flex flex-col flex-grow">
+        <div className="flex items-center justify-between mb-2 sm:mb-3">
+          <IconComponent className="w-7 h-7 sm:w-8 sm:h-8 text-primary" />
+          {skill.experience && <Badge variant="secondary">{skill.experience}</Badge>}
+        </div>
+        <h3 className="text-base sm:text-lg font-bold mb-1 sm:mb-2 text-foreground">{skill.name}</h3>
+        <p className="text-xs sm:text-sm text-muted-foreground flex-grow">{skill.description}</p>
+      </div>
+    </motion.div>
+  );
 };
 
 const Skills = () => {
   const navigate = useNavigate();
   const { translations } = useLanguage();
-  const [activeSkill, setActiveSkill] = useState(null);
 
   const handleContactClick = () => {
     navigate('/contact');
   };
 
-  const skills = useMemo(() => translations?.skills?.items || [], [translations]);
+  const categorizedSkills = useMemo(() => {
+    if (!translations?.skills?.items) return {};
+    return translations.skills.items.reduce((acc, skill) => {
+      const category = skill.category || 'other';
+      if (!acc[category]) {
+        acc[category] = [];
+      }
+      acc[category].push(skill);
+      return acc;
+    }, {});
+  }, [translations]);
 
   if (!translations?.skills) return null;
 
-  const wheelRadius = "clamp(120px, 22vw, 220px)";
-  const itemSize = 90;
-
-  const SkillItem = ({ skill, index }) => {
-    const angle = (index / skills.length) * 360;
-    const IconComponent = iconMap[skill.icon] || Code;
-
-    return (
-      <motion.div
-        className="absolute cursor-pointer flex flex-col items-center justify-center text-center"
-        style={{
-          width: itemSize,
-          height: itemSize,
-          top: `calc(50% - ${itemSize / 2}px)`,
-          left: `calc(50% - ${itemSize / 2}px)`,
-          transform: `rotate(${angle}deg) translateX(${wheelRadius}) rotate(${-angle}deg)`,
-        }}
-        onMouseEnter={() => setActiveSkill(skill)}
-        whileHover={{ scale: 1.15, zIndex: 10 }}
-        transition={{ type: "spring", stiffness: 400, damping: 10 }}
-      >
-        <div className="flex flex-col items-center">
-          <motion.div
-            className={cn(
-              "w-14 h-14 rounded-full flex items-center justify-center bg-secondary shadow-lg transition-all duration-300 mb-2",
-              activeSkill?.name === skill.name ? "bg-primary text-primary-foreground scale-110" : "text-primary"
-            )}
-            whileHover={{ y: -5, boxShadow: "0 10px 20px rgba(0, 0, 0, 0.2)" }} // Added hover animation for the icon container
-            transition={{ type: "spring", stiffness: 300, damping: 15 }}
-          >
-            <IconComponent className="w-7 h-7" />
-          </motion.div>
-          <p className="text-xs font-semibold text-muted-foreground transition-colors duration-300">
-            {skill.name}
-          </p>
-        </div>
-      </motion.div>
-    );
-  };
-  
-  const displayedContent = activeSkill || {
-    name: "My Tech Stack",
-    description: "Hover over a skill to learn more.",
-    isDefault: true,
-  };
+  const categoryOrder = ['frontend', 'backend', 'tools'];
 
   return (
-    <section id="skills" className="py-20 lg:py-24 bg-secondary/30 overflow-hidden">
+    <section id="skills" className="py-16 lg:py-24 bg-secondary/30">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.5 }}
           transition={{ duration: 0.5 }}
-          className="text-center mb-16 lg:mb-20"
+          className="text-center mb-12"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
             {translations.skills.heading}
@@ -95,23 +98,35 @@ const Skills = () => {
           </p>
         </motion.div>
 
-        <div className="relative flex items-center justify-center min-h-[450px] md:min-h-[550px]" onMouseLeave={() => setActiveSkill(null)}>
-          <div className="absolute w-full h-full" style={{ width: `calc(${wheelRadius} * 2 + ${itemSize}px)`, height: `calc(${wheelRadius} * 2 + ${itemSize}px)`}}>
-            {skills.map((skill, index) => (
-              <SkillItem key={skill.name} skill={skill} index={index} />
-            ))}
-          </div>
-          
-          <div
-            className="relative z-10 text-center w-52 h-52 md:w-60 md:h-60 flex flex-col items-center justify-center bg-background/60 backdrop-blur-md rounded-full p-6 shadow-2xl"
-          >
-            <h3 className={cn("font-bold text-primary mb-2", displayedContent.isDefault ? "text-lg md:text-xl" : "text-xl md:text-2xl")}>{displayedContent.name}</h3>
-            <p className="text-xs md:text-sm text-muted-foreground">{displayedContent.description}</p>
-          </div>
+        <div className="space-y-12">
+          {categoryOrder.map((categoryKey) => {
+            const skills = categorizedSkills[categoryKey];
+            const categoryName = translations.skills.categories[categoryKey];
+            if (!skills || skills.length === 0) return null;
+
+            return (
+              <div key={categoryKey}>
+                <motion.h3 
+                  initial={{ opacity: 0, x: -30 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true, amount: 0.5 }}
+                  transition={{ duration: 0.5, delay: 0.2 }}
+                  className="text-2xl font-bold mb-6 text-primary border-b-2 border-primary/30 pb-2"
+                >
+                  {categoryName}
+                </motion.h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+                  {skills.map((skill, index) => (
+                    <SkillCard key={skill.name} skill={skill} index={index} />
+                  ))}
+                </div>
+              </div>
+            );
+          })}
         </div>
 
         <motion.div
-          className="text-center mt-16 lg:mt-20"
+          className="text-center mt-16"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.5 }}
