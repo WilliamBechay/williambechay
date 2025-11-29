@@ -31,7 +31,7 @@ const Skills = () => {
   if (!translations?.skills) return null;
 
   // Responsive values
-  const wheelRadius = "clamp(130px, 35vw, 240px)";
+  const wheelRadius = "clamp(150px, 40vw, 260px)";
   const centerSize = 180; // Mobile: 180px, will be overridden by Tailwind classes
   const itemSize = 70;
 
@@ -96,7 +96,7 @@ const Skills = () => {
           </p>
         </motion.div>
 
-        <div className="relative flex items-center justify-center w-full" style={{ minHeight: "650px" }} onMouseLeave={() => setActiveSkill(null)}>
+        <div className="relative flex items-center justify-center w-full" style={{ minHeight: "700px" }} onMouseLeave={() => setActiveSkill(null)}>
           {/* Conteneur pour les éléments autour de la roue */}
           <div 
             className="absolute"
