@@ -164,6 +164,9 @@
     "meta": {
       "title": "William Béchay - Développeur Web",
       "description": "Développeur web full-stack spécialisé dans la création d'expériences numériques performantes et innovantes."
+    },
+    "intro": {
+      "greeting": "Je suis William Bechay, ingénieur logiciel et informaticien spécialisé en systèmes et réseaux. J'aime contribuer aux logiciels libres et je suis passionné par tout ce qui fonctionne sur ordinateur. Ces dernières années, mon travail s'est concentré sur le développement backend, l'expérience développeur, l'ingénierie d'infrastructure et de plateforme, les architectures logicielles, l'observabilité et la fiabilité."
     }
   },
   "admin": {

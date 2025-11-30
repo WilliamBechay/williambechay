@@ -3,6 +3,7 @@ import { Helmet } from 'react-helmet';
 import Projects from '@/components/Projects';
 import Skills from '@/components/Skills';
 import CallToAction from '@/components/CallToAction';
+import IntroSection from '@/components/IntroSection';
 import { useLanguage } from '@/components/LanguageProvider';
 import WelcomeMessage from '@/components/WelcomeMessage';
 
@@ -19,6 +20,7 @@ const Home = () => {
       </Helmet>
       <div className="flex flex-col w-full overflow-x-hidden">
         <WelcomeMessage />
+        <IntroSection />
         <Projects />
         <Skills />
         <CallToAction />

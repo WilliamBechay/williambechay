@@ -164,6 +164,9 @@
     "meta": {
       "title": "William Béchay - Web Developer",
       "description": "Full-stack web developer specializing in creating powerful and innovative digital experiences."
+    },
+    "intro": {
+      "greeting": "I am William Bechay, software engineer and computer scientist specialized in systems and networks. I enjoy contributing to open source software and I am passionate about everything that runs on computers. In recent years, my work has focused on backend development, developer experience, infrastructure and platform engineering, software architectures, observability and reliability."
     }
   },
   "admin": {
