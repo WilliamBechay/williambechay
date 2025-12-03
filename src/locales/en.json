@@ -49,9 +49,16 @@
         "category": "frontend"
       },
       {
-        "name": "HTML & CSS",
-        "description": "Solid foundations for semantic web structures and responsive design.",
-        "icon": "html,css3",
+        "name": "HTML",
+        "description": "Solid foundations for semantic web structures.",
+        "icon": "html",
+        "experience": "5+ years",
+        "category": "frontend"
+      },
+      {
+        "name": "CSS",
+        "description": "Responsive design and modern styling.",
+        "icon": "css3",
         "experience": "5+ years",
         "category": "frontend"
       },
@@ -84,9 +91,16 @@
         "category": "backend"
       },
       {
-        "name": "Git & GitHub",
-        "description": "Version control and effective collaboration with Git and associated platforms.",
-        "icon": "git,github",
+        "name": "Git",
+        "description": "Version control and code management.",
+        "icon": "git",
+        "experience": "5+ years",
+        "category": "tools"
+      },
+      {
+        "name": "GitHub",
+        "description": "Collaboration and repository hosting.",
+        "icon": "github",
         "experience": "5+ years",
         "category": "tools"
       },

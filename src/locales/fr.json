@@ -49,9 +49,16 @@
         "category": "frontend"
       },
       {
-        "name": "HTML & CSS",
-        "description": "Fondations solides pour des structures web sémantiques et un design réactif.",
-        "icon": "html,css3",
+        "name": "HTML",
+        "description": "Fondations solides pour des structures web sémantiques.",
+        "icon": "html",
+        "experience": "5+ ans",
+        "category": "frontend"
+      },
+      {
+        "name": "CSS",
+        "description": "Design réactif et stylisation moderne.",
+        "icon": "css3",
         "experience": "5+ ans",
         "category": "frontend"
       },
@@ -84,9 +91,16 @@
         "category": "backend"
       },
       {
-        "name": "Git & GitHub",
-        "description": "Contrôle de version et collaboration efficace avec Git et les plateformes associées.",
-        "icon": "git,github",
+        "name": "Git",
+        "description": "Contrôle de version et gestion du code.",
+        "icon": "git",
+        "experience": "5+ ans",
+        "category": "tools"
+      },
+      {
+        "name": "GitHub",
+        "description": "Collaboration et hébergement de dépôts.",
+        "icon": "github",
         "experience": "5+ ans",
         "category": "tools"
       },
