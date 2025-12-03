@@ -56,13 +56,6 @@
         "category": "frontend"
       },
       {
-        "name": "CSS",
-        "description": "Responsive design and modern styling.",
-        "icon": "css3",
-        "experience": "5+ years",
-        "category": "frontend"
-      },
-      {
         "name": "Node.js",
         "description": "Development of robust servers and RESTful APIs with Node.js and Express.",
         "icon": "nodejs",
