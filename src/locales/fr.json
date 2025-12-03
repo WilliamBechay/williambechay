@@ -182,7 +182,9 @@
     "options": {
       "title": "Autres Moyens de Connexion",
       "email": "williambechay@hotmail.com"
-    }
+    },
+    "helpText": "Besoin d'aide sur un projet? Vous pouvez me contacter.",
+    "tagline": "Can't build it, can't understand it."
   },
   "footer": {
     "rights": "© 2025 William Béchay. Tous droits réservés.",

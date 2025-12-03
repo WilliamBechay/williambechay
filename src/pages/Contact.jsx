@@ -124,6 +124,11 @@ const Contact = () => {
                 ))}
               </div>
             </div>
+
+            <div className="mt-8 space-y-2">
+              <p className="text-muted-foreground">{getTranslation('contact.helpText', 'Need help on a project? You can contact me.')}</p>
+              <p className="text-sm font-medium text-foreground italic">{getTranslation('contact.tagline', 'Can\'t build it, can\'t understand it.')}</p>
+            </div>
           </div>
         </motion.div>
       </div>
