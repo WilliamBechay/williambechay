@@ -18,9 +18,7 @@ const Projects = () => {
       imageSrc: wiibecImage,
       imageAlt: 'Wiibec.com project screenshot showing modern web interface',
       link: 'https://wiibec.com',
-      frontend: ['React', 'Vite', 'Tailwind CSS', 'JavaScript', 'JSX'],
-      backend: ['Node.js', 'Supabase', 'Stripe'],
-      apis: ['Stripe', 'Supabase Auth'],
+      technologies: ['React', 'Vite', 'Tailwind CSS', 'JavaScript', 'Node.js', 'Supabase', 'Stripe'],
       tags: [],
     },
     {
@@ -30,9 +28,7 @@ const Projects = () => {
       imageSrc: mindovestImage,
       imageAlt: 'Mindovest.com investment platform interface',
       link: 'https://mindovest.com',
-      frontend: ['React', 'Vite', 'Tailwind CSS', 'Capacitor'],
-      backend: ['Supabase', 'Deno', 'TypeScript', 'SQL'],
-      apis: ['Supabase Realtime', 'Market Data API'],
+      technologies: ['React', 'Vite', 'Tailwind CSS', 'Capacitor', 'Supabase', 'Deno', 'TypeScript', 'SQL'],
       tags: [],
     },
   ];
@@ -60,53 +56,18 @@ const Projects = () => {
           {projects.map((project, index) => (
             <div key={project.id} className="space-y-3">
               <ProjectCard project={project} index={index} />
-              
-              {/* Frontend */}
+
               <div className="p-3 rounded-lg bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800">
                 <h4 className="text-xs font-semibold text-slate-700 dark:text-slate-300 uppercase tracking-wider mb-2">
-                  💻 Frontend
+                  Technologies
                 </h4>
                 <div className="flex flex-wrap gap-2">
-                  {project.frontend.map((tech, idx) => (
+                  {project.technologies.map((tech, idx) => (
                     <span
                       key={idx}
                       className="px-2 py-1 text-xs font-medium bg-blue-100 dark:bg-blue-800 text-blue-700 dark:text-blue-200 rounded-full"
                     >
                       {tech}
-                    </span>
-                  ))}
-                </div>
-              </div>
-
-              {/* Backend */}
-              <div className="p-3 rounded-lg bg-emerald-50 dark:bg-emerald-900/20 border border-emerald-200 dark:border-emerald-800">
-                <h4 className="text-xs font-semibold text-slate-700 dark:text-slate-300 uppercase tracking-wider mb-2">
-                  ⚙️ Backend
-                </h4>
-                <div className="flex flex-wrap gap-2">
-                  {project.backend.map((tech, idx) => (
-                    <span
-                      key={idx}
-                      className="px-2 py-1 text-xs font-medium bg-emerald-100 dark:bg-emerald-800 text-emerald-700 dark:text-emerald-200 rounded-full"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-              </div>
-
-              {/* APIs */}
-              <div className="p-3 rounded-lg bg-orange-50 dark:bg-orange-900/20 border border-orange-200 dark:border-orange-800">
-                <h4 className="text-xs font-semibold text-slate-700 dark:text-slate-300 uppercase tracking-wider mb-2">
-                  🔌 APIs utilisées
-                </h4>
-                <div className="flex flex-wrap gap-2">
-                  {project.apis.map((api, idx) => (
-                    <span
-                      key={idx}
-                      className="px-2 py-1 text-xs font-medium bg-orange-100 dark:bg-orange-800 text-orange-700 dark:text-orange-200 rounded-full"
-                    >
-                      {api}
                     </span>
                   ))}
                 </div>
