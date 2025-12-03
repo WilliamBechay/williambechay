@@ -13,35 +13,57 @@ const MatrixBackground = () => {
     canvas.height = window.innerHeight;
 
     const characters = '01';
-    const fontSize = 14;
+    const fontSize = 16;
     const columns = canvas.width / fontSize;
-    const drops = [];
 
-    for (let i = 0; i < columns; i++) {
-      drops[i] = Math.random() * -100;
+    const streams = [];
+    const maxStreams = 8;
+
+    const createStream = () => {
+      return {
+        x: Math.floor(Math.random() * columns) * fontSize,
+        y: -Math.random() * canvas.height,
+        speed: 2 + Math.random() * 3,
+        length: 15 + Math.random() * 20,
+      };
+    };
+
+    for (let i = 0; i < maxStreams; i++) {
+      if (Math.random() > 0.5) {
+        streams.push(createStream());
+      }
     }
 
     let animationFrameId;
 
     const draw = () => {
-      ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+      ctx.fillStyle = 'rgba(0, 0, 0, 0.1)';
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-      ctx.fillStyle = 'rgba(34, 197, 94, 0.15)';
       ctx.font = `${fontSize}px monospace`;
 
-      for (let i = 0; i < drops.length; i++) {
-        const text = characters[Math.floor(Math.random() * characters.length)];
-        const x = i * fontSize;
-        const y = drops[i] * fontSize;
+      streams.forEach((stream, index) => {
+        for (let i = 0; i < stream.length; i++) {
+          const char = characters[Math.floor(Math.random() * characters.length)];
+          const y = stream.y - i * fontSize;
 
-        ctx.fillText(text, x, y);
+          const opacity = (stream.length - i) / stream.length * 0.15;
+          ctx.fillStyle = `rgba(34, 197, 94, ${opacity})`;
 
-        if (y > canvas.height && Math.random() > 0.975) {
-          drops[i] = 0;
+          if (y > 0 && y < canvas.height) {
+            ctx.fillText(char, stream.x, y);
+          }
         }
 
-        drops[i]++;
+        stream.y += stream.speed;
+
+        if (stream.y - stream.length * fontSize > canvas.height) {
+          streams[index] = createStream();
+        }
+      });
+
+      if (streams.length < maxStreams && Math.random() > 0.98) {
+        streams.push(createStream());
       }
 
       animationFrameId = requestAnimationFrame(draw);
@@ -66,7 +88,7 @@ const MatrixBackground = () => {
     <canvas
       ref={canvasRef}
       className="fixed top-0 left-0 w-full h-full pointer-events-none z-0"
-      style={{ opacity: 0.4 }}
+      style={{ opacity: 0.5 }}
     />
   );
 };
