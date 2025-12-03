@@ -117,6 +117,34 @@
         "icon": "typescript",
         "experience": "3+ years",
         "category": "frontend"
+      },
+      {
+        "name": "Next.js",
+        "description": "Server-side rendering and static site generation with React.",
+        "icon": "nextjs",
+        "experience": "3+ years",
+        "category": "frontend"
+      },
+      {
+        "name": "Express.js",
+        "description": "Building fast and scalable RESTful APIs.",
+        "icon": "express",
+        "experience": "4+ years",
+        "category": "backend"
+      },
+      {
+        "name": "Prisma",
+        "description": "Modern ORM for type-safe database access.",
+        "icon": "prisma",
+        "experience": "2+ years",
+        "category": "backend"
+      },
+      {
+        "name": "Jest",
+        "description": "Unit testing and test-driven development.",
+        "icon": "jest",
+        "experience": "3+ years",
+        "category": "tools"
       }
     ]
   },
