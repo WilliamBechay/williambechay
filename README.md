@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://skillicons.dev">
-    <img src="https://skillicons.dev/icons?i=js,react,tailwindcss,html,css3,nodejs,python,postgresql,mongodb,git,github,docker,aws,typescript&theme=light" />
+    <img src="https://skillicons.dev/icons?i=js,react,nextjs,tailwindcss,html,nodejs,express,python,postgresql,mongodb,prisma,git,github,docker,typescript,jest&theme=light" />
   </a>
 </p>
 
@@ -9,16 +9,17 @@
 I specialize in full-stack web development with expertise across:
 
 **Frontend Development:**
-- JavaScript, React.js, TypeScript
-- Tailwind CSS, HTML & CSS
+- JavaScript, React.js, Next.js, TypeScript
+- Tailwind CSS, HTML
 - Responsive and interactive UI design
 
 **Backend Development:**
-- Node.js with Express
+- Node.js with Express.js
 - Python
 - PostgreSQL, MongoDB
+- Prisma ORM
 
 **Tools & DevOps:**
 - Git & GitHub
 - Docker
-- AWS
+- Jest for testing
