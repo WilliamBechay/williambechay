@@ -9,23 +9,19 @@ import { ThemeProvider } from '@/components/ThemeProvider';
 import { LanguageProvider } from '@/components/LanguageProvider';
 import { Toaster } from '@/components/ui/toaster';
 import { SupabaseAuthProvider } from '@/contexts/SupabaseAuthContext';
-import MatrixBackground from '@/components/MatrixBackground';
 
 const AppContent = () => {
   return (
     <div className="min-h-screen bg-background text-foreground transition-colors duration-300 flex flex-col">
-      <MatrixBackground />
-      <div className="relative z-10 flex flex-col min-h-screen">
-        <Header />
-        <main className="flex-grow overflow-x-hidden pt-16">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/admin" element={<Admin />} />
-          </Routes>
-        </main>
-        <Footer />
-      </div>
+      <Header />
+      <main className="flex-grow overflow-x-hidden pt-16">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/admin" element={<Admin />} />
+        </Routes>
+      </main>
+      <Footer />
       <Toaster />
     </div>
   );
