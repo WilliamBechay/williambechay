@@ -1,21 +1,8 @@
-import React, { useState, useMemo } from 'react';
+import React, { useMemo } from 'react';
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
-import { Code, Server, Database, Cloud, Brush, GitMerge, Terminal, Container as ContainerIcon } from 'lucide-react';
 import { useLanguage } from '@/components/LanguageProvider';
 import { Button } from '@/components/ui/button';
-import { cn } from '@/lib/utils';
-
-const iconMap = {
-  Code,
-  Server,
-  Database,
-  Cloud,
-  Brush,
-  GitMerge,
-  Terminal,
-  Container: ContainerIcon,
-};
 
 const Skills = () => {
   const navigate = useNavigate();
@@ -30,8 +17,6 @@ const Skills = () => {
   if (!translations?.skills) return null;
 
   const SkillIcon = ({ skill }) => {
-    const IconComponent = iconMap[skill.icon] || Code;
-
     return (
       <motion.div
         className="flex flex-col items-center justify-center cursor-pointer"
@@ -39,11 +24,14 @@ const Skills = () => {
         transition={{ type: "spring", stiffness: 300, damping: 15 }}
       >
         <motion.div
-          className="w-14 h-14 rounded-full flex items-center justify-center bg-secondary shadow-lg text-primary mb-2"
           whileHover={{ scale: 1.1, boxShadow: "0 10px 20px rgba(0, 0, 0, 0.2)" }}
           transition={{ type: "spring", stiffness: 300, damping: 15 }}
         >
-          <IconComponent className="w-7 h-7" />
+          <img
+            src={`https://skillicons.dev/icons?i=${skill.icon}&theme=light`}
+            alt={skill.name}
+            className="w-14 h-14 mb-2"
+          />
         </motion.div>
         <p className="text-xs font-semibold text-muted-foreground text-center">{skill.name}</p>
       </motion.div>

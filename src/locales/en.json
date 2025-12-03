@@ -30,86 +30,86 @@
       {
         "name": "JavaScript",
         "description": "Deep proficiency for dynamic and interactive web development.",
-        "icon": "Code",
+        "icon": "js",
         "experience": "5+ years",
         "category": "frontend"
       },
       {
         "name": "React.js",
         "description": "Building modern and performant user interfaces with React and its ecosystem.",
-        "icon": "Code",
+        "icon": "react",
         "experience": "4+ years",
         "category": "frontend"
       },
       {
         "name": "Tailwind CSS",
         "description": "Rapid and efficient styling of applications with the utility-first CSS framework.",
-        "icon": "Brush",
+        "icon": "tailwindcss",
         "experience": "3+ years",
         "category": "frontend"
       },
       {
         "name": "HTML & CSS",
         "description": "Solid foundations for semantic web structures and responsive design.",
-        "icon": "Code",
+        "icon": "html,css3",
         "experience": "5+ years",
         "category": "frontend"
       },
       {
         "name": "Node.js",
         "description": "Development of robust servers and RESTful APIs with Node.js and Express.",
-        "icon": "Server",
+        "icon": "nodejs",
         "experience": "4+ years",
         "category": "backend"
       },
       {
         "name": "Python",
         "description": "Using Python for backend, scripting, and automation.",
-        "icon": "Server",
+        "icon": "python",
         "experience": "3+ years",
         "category": "backend"
       },
       {
         "name": "PostgreSQL",
         "description": "Design and management of complex relational databases.",
-        "icon": "Database",
+        "icon": "postgresql",
         "experience": "3+ years",
         "category": "backend"
       },
       {
         "name": "MongoDB",
         "description": "Development with NoSQL databases for flexible and scalable applications.",
-        "icon": "Database",
+        "icon": "mongodb",
         "experience": "2+ years",
         "category": "backend"
       },
       {
         "name": "Git & GitHub",
         "description": "Version control and effective collaboration with Git and associated platforms.",
-        "icon": "GitMerge",
+        "icon": "git,github",
         "experience": "5+ years",
         "category": "tools"
       },
       {
         "name": "Docker",
         "description": "Containerization of applications for consistent and reproducible deployments.",
-        "icon": "Container",
+        "icon": "docker",
         "experience": "2+ years",
         "category": "tools"
       },
       {
         "name": "AWS",
         "description": "Deployment and management of applications on Amazon Web Services.",
-        "icon": "Cloud",
+        "icon": "aws",
         "experience": "3+ years",
         "category": "tools"
       },
       {
-        "name": "CI/CD",
-        "description": "Implementation of continuous integration and deployment pipelines.",
-        "icon": "Terminal",
+        "name": "TypeScript",
+        "description": "Building scalable and type-safe applications with TypeScript.",
+        "icon": "typescript",
         "experience": "3+ years",
-        "category": "tools"
+        "category": "frontend"
       }
     ]
   },
