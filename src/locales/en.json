@@ -197,7 +197,9 @@
     },
     "intro": {
       "greeting": "Software engineer specializing in systems and networks. My expertise spans backend development, infrastructure, software architecture, observability, and system reliability."
-    }
+    },
+    "helpText": "Need help on a project? You can contact me.",
+    "tagline": "Can't build it, can't understand it."
   },
   "admin": {
     "meta": {

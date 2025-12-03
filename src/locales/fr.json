@@ -197,7 +197,9 @@
     },
     "intro": {
       "greeting": "Ingénieur logiciel spécialisé en systèmes et réseaux. Mon expertise couvre le développement backend, l'infrastructure, les architectures logicielles, l'observabilité et la fiabilité des systèmes."
-    }
+    },
+    "helpText": "Besoin d'aide sur un projet? Vous pouvez me contacter.",
+    "tagline": "Can't build it, can't understand it."
   },
   "admin": {
     "meta": {
