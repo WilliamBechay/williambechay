@@ -105,13 +105,6 @@
         "category": "tools"
       },
       {
-        "name": "AWS",
-        "description": "Deployment and management of applications on Amazon Web Services.",
-        "icon": "aws",
-        "experience": "3+ years",
-        "category": "tools"
-      },
-      {
         "name": "TypeScript",
         "description": "Building scalable and type-safe applications with TypeScript.",
         "icon": "typescript",
