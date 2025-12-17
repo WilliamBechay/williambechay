@@ -12,7 +12,7 @@ import { SupabaseAuthProvider } from '@/contexts/SupabaseAuthContext';
 
 const AppContent = () => {
   return (
-    <div className="min-h-screen text-foreground transition-colors duration-300 flex flex-col">
+    <div className="min-h-screen bg-background text-foreground transition-colors duration-300 flex flex-col">
       <Header />
       <main className="flex-grow overflow-x-hidden pt-16">
         <Routes>
