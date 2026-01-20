@@ -9,17 +9,17 @@ const IntroSection = () => {
   if (!translations?.home?.intro) return null;
 
   return (
-    <section className="relative py-32 px-4 overflow-hidden min-h-[90vh] flex items-center">
+    <section className="relative py-20 md:py-32 px-4 overflow-hidden min-h-[80vh] md:min-h-[90vh] flex items-center">
       {/* Animated background gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-accent/5 to-transparent animate-gradient-xy" />
       
       {/* Decorative animated blobs */}
-      <div className="absolute top-20 left-10 w-72 h-72 bg-primary/20 rounded-full blur-3xl animate-float" />
-      <div className="absolute bottom-20 right-10 w-96 h-96 bg-accent/20 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }} />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-r from-primary/5 to-accent/5 rounded-full blur-3xl animate-pulse-glow" />
+      <div className="absolute top-10 md:top-20 left-5 md:left-10 w-48 md:w-72 h-48 md:h-72 bg-primary/20 rounded-full blur-3xl animate-float" />
+      <div className="absolute bottom-10 md:bottom-20 right-5 md:right-10 w-64 md:w-96 h-64 md:h-96 bg-accent/20 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }} />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 md:w-[600px] h-80 md:h-[600px] bg-gradient-to-r from-primary/5 to-accent/5 rounded-full blur-3xl animate-pulse-glow" />
       
       {/* Floating particles */}
-      <div className="absolute inset-0">
+      <div className="absolute inset-0 hidden md:block">
         {[...Array(5)].map((_, i) => (
           <motion.div
             key={i}
@@ -47,30 +47,30 @@ const IntroSection = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="text-center space-y-10"
+          className="text-center space-y-6 md:space-y-10"
         >
           {/* Badge with shimmer effect */}
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full glass-strong border-2 border-primary/30 relative overflow-hidden group"
+            className="inline-flex items-center gap-2 px-4 md:px-5 py-2 md:py-2.5 rounded-full glass-strong border-2 border-primary/30 relative overflow-hidden group"
           >
             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-primary/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000" />
-            <Sparkles className="w-4 h-4 text-primary animate-spin-slow" />
-            <span className="text-sm font-semibold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent relative z-10">
+            <Sparkles className="w-3 h-3 md:w-4 md:h-4 text-primary animate-spin-slow" />
+            <span className="text-xs md:text-sm font-semibold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent relative z-10">
               Full Stack Developer
             </span>
-            <Code2 className="w-4 h-4 text-accent animate-pulse" />
+            <Code2 className="w-3 h-3 md:w-4 md:h-4 text-accent animate-pulse" />
           </motion.div>
 
           {/* Main heading with stagger animation */}
-          <div className="space-y-4">
+          <div className="space-y-2 md:space-y-4">
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
-              className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight"
+              className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight px-2"
             >
               <motion.span 
                 className="inline-block bg-gradient-to-r from-foreground via-primary to-accent bg-clip-text text-transparent"
@@ -110,7 +110,7 @@ const IntroSection = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.5 }}
-            className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed"
+            className="text-base md:text-xl lg:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed px-4"
           >
             {translations.home.intro.greeting}
           </motion.p>
@@ -120,7 +120,7 @@ const IntroSection = () => {
             initial={{ scaleX: 0 }}
             animate={{ scaleX: 1 }}
             transition={{ duration: 1.2, delay: 0.7, ease: "easeOut" }}
-            className="h-1 w-48 mx-auto rounded-full relative overflow-hidden"
+            className="h-1 w-32 md:w-48 mx-auto rounded-full relative overflow-hidden"
           >
             <div className="absolute inset-0 bg-gradient-to-r from-primary via-accent to-primary animate-gradient-x" />
           </motion.div>
@@ -130,7 +130,7 @@ const IntroSection = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.9 }}
-            className="flex flex-wrap justify-center gap-8 mt-12"
+            className="flex flex-wrap justify-center gap-4 md:gap-8 mt-8 md:mt-12 px-2"
           >
             {[
               { label: 'Years Experience', value: '3+' },
@@ -140,15 +140,15 @@ const IntroSection = () => {
               <motion.div
                 key={stat.label}
                 whileHover={{ scale: 1.1, y: -5 }}
-                className="glass rounded-2xl px-6 py-4 min-w-[120px] group cursor-default"
+                className="glass rounded-2xl px-4 md:px-6 py-3 md:py-4 min-w-[100px] md:min-w-[120px] group cursor-default"
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 1 + index * 0.1 }}
               >
-                <div className="text-3xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent group-hover:scale-110 transition-transform">
+                <div className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent group-hover:scale-110 transition-transform">
                   {stat.value}
                 </div>
-                <div className="text-sm text-muted-foreground mt-1">
+                <div className="text-xs md:text-sm text-muted-foreground mt-1">
                   {stat.label}
                 </div>
               </motion.div>
