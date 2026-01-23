@@ -156,7 +156,7 @@ const Header = () => {
                     transition={{ duration: 0.3 }}
                   >
                     {theme === 'dark' ? (
-                      <Sun className="w-5 h-5 text-yellow-500" />
+                      <Sun className="w-5 h-5 text-white" />
                     ) : (
                       <Moon className="w-5 h-5 text-primary" />
                     )}
@@ -184,7 +184,7 @@ const Header = () => {
               aria-label="Toggle theme"
             >
               {theme === 'dark' ? (
-                <Sun className="w-5 h-5 text-yellow-500" />
+                <Sun className="w-5 h-5 text-white" />
               ) : (
                 <Moon className="w-5 h-5 text-primary" />
               )}
