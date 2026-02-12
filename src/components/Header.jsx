@@ -222,7 +222,7 @@ const Header = () => {
               className="md:hidden overflow-hidden"
             >
               <motion.div 
-                className="flex flex-col gap-2 pt-4 mt-4 border-t border-border/50 bg-background/95 backdrop-blur-md rounded-lg px-2 pb-2"
+                className="relative flex flex-col gap-2 pt-4 mt-4 border-t border-border/30 rounded-xl px-3 pb-3 overflow-hidden"
                 initial="hidden"
                 animate="show"
                 variants={{
@@ -235,6 +235,10 @@ const Header = () => {
                   }
                 }}
               >
+                {/* Gradient background */}
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-accent/5 to-primary/10 backdrop-blur-xl -z-10" />
+                <div className="absolute inset-0 bg-card/80 backdrop-blur-xl -z-10" />
+                
                 <motion.button
                   variants={{
                     hidden: { x: -20, opacity: 0 },
