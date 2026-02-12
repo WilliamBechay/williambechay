@@ -222,7 +222,7 @@ const Header = () => {
               className="md:hidden overflow-hidden"
             >
               <motion.div 
-                className="flex flex-col gap-2 pt-4 mt-4 border-t border-border/50"
+                className="flex flex-col gap-2 pt-4 mt-4 border-t border-border/50 bg-background/95 backdrop-blur-md rounded-lg px-2 pb-2"
                 initial="hidden"
                 animate="show"
                 variants={{
